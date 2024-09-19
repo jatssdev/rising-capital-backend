@@ -70,93 +70,17 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item nav-category">UI Elements</li>
+
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
-              aria-controls="ui-basic">
-              <i class="menu-icon mdi mdi-floor-plan"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
+            <a class="nav-link" href="./add-job.html">
+              <i class="menu-icon mdi mdi-briefcase"></i>
+              <span><button class="menu-title btn ">Add Job</button></span>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="./dist/pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./dist/pages/ui-features/dropdowns.html">Dropdowns</a>
-                </li>
-                <li class="nav-item"> <a class="nav-link" href="./dist/pages/ui-features/typography.html">Typography</a>
-                </li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false"
-              aria-controls="form-elements">
-              <i class="menu-icon mdi mdi-card-text-outline"></i>
-              <span class="menu-title">Form elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="menu-icon mdi mdi-chart-line"></i>
-              <span class="menu-title">Charts</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="menu-icon mdi mdi-table"></i>
-              <span class="menu-title">Tables</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="menu-icon mdi mdi-layers-outline"></i>
-              <span class="menu-title">Icons</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="icons">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/font-awesome.html">Font Awesome</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="menu-icon mdi mdi-account-circle-outline"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="docs/documentation.html">
-              <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Documentation</span>
+            <a class="nav-link" href="./jobs.html">
+              <i class="menu-icon mdi mdi-briefcase"></i>
+              <span><button class="menu-title btn ">Jobs</button></span>
             </a>
           </li>
           <li class="nav-item">
@@ -180,95 +104,27 @@
                         <div class="col-md-8">
                           <div class="card shadow-sm rounded">
                             <div class="card-body">
-                              <h4 class="card-title text-primary">Add a New Job</h4>
-                              <p class="card-description">Provide job details in the form below</p>
-                              <form id="jobForm">
+                              <h4 class="card-title text-primary">Dashboard</h4>
 
-                                <!-- Job Title Field -->
-                                <div class="form-group mb-3">
-                                  <label for="jobTitle" class="form-label">Job Title</label>
-                                  <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white"><i
-                                        class="mdi mdi-briefcase"></i></span>
-                                    <input type="text" class="form-control" id="jobTitle" placeholder="Enter job title"
-                                      required>
-                                  </div>
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <a class="text-decoration-none" href="./jobs.html">
+                                    <div class="card bg-primary text-white text-center shadow-sm">
+                                      <div class="card-body">
+                                        <h5 class="card-title text-white">Total Jobs</h5>
+                                        <h3 id="jobCount" class="card-text">0</h3>
+                                        <p class="card-text">Number of Jobs Listed</p>
+                                      </div>
+                                    </div>
+                                  </a>
                                 </div>
+                              </div>
 
-                                <!-- Job Description Field -->
-                                <div class="form-group mb-3">
-                                  <label for="jobDescription" class="form-label">Job Description</label>
-                                  <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white"><i
-                                        class="mdi mdi-file-document"></i></span>
-                                    <textarea class="form-control" id="jobDescription" rows="4"
-                                      placeholder="Enter job description" required></textarea>
-                                  </div>
-                                </div>
-
-                                <!-- Company Name Field -->
-                                <div class="form-group mb-3">
-                                  <label for="companyName" class="form-label">Company Name</label>
-                                  <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white"><i
-                                        class="mdi mdi-domain"></i></span>
-                                    <input type="text" class="form-control" id="companyName"
-                                      placeholder="Enter company name" required>
-                                  </div>
-                                </div>
-
-                                <!-- Job Location Field -->
-                                <div class="form-group mb-3">
-                                  <label for="jobLocation" class="form-label">Job Location</label>
-                                  <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white"><i
-                                        class="mdi mdi-map-marker-circle"></i></span>
-                                    <input type="text" class="form-control" id="jobLocation"
-                                      placeholder="Enter job location" required>
-                                  </div>
-                                </div>
-
-                                <!-- Job Type Field -->
-                                <div class="form-group mb-3">
-                                  <label for="jobType" class="form-label">Job Type</label>
-                                  <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white"><i
-                                        class="mdi mdi-help-circle-outline"></i></span>
-                                    <select class="form-select" id="jobType" required>
-                                      <option disabled selected>Select job type</option>
-                                      <option>Full-Time</option>
-                                      <option>Part-Time</option>
-                                      <option>Contract</option>
-                                      <option>Internship</option>
-                                    </select>
-                                  </div>
-                                </div>
-
-                                <!-- Dynamic Sections Container -->
-                                <div id="sectionsContainer" class="my-3"></div>
-                                <button type="button" class="btn btn-primary mb-3" onclick="addSection()">Add
-                                  Section</button>
-
-                                <!-- Form Buttons -->
-                                <div class="d-flex justify-content-between">
-                                  <button type="submit" class="btn btn-success btn-icon-text">
-                                    <i class="mdi mdi-check btn-icon-prepend"></i> Submit
-                                  </button>
-                                  <button type="reset" class="btn btn-light btn-icon-text">
-                                    <i class="mdi mdi-close btn-icon-prepend"></i> Cancel
-                                  </button>
-                                </div>
-                              </form>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="container my-5">
-                        <h4 class="card-title text-primary">All Jobs</h4>
-                        <div id="jobList" class="list-group mb-5">
-                          <!-- Jobs will be dynamically injected here -->
-                        </div>
-                      </div>
+
 
                     </div>
 
@@ -311,189 +167,20 @@
   <!-- End custom js for this page-->
 
   <script>
-    // Add the addSection function here
-    function addSection(header = "", content = "") {
-      const sectionCount = document.querySelectorAll('#sectionsContainer .card').length + 1;
-
-      const section = document.createElement("div");
-      section.className = "card mb-3";
-      section.innerHTML = `
-        <div class="card-header">
-            <input type="text" class="form-control" placeholder="Section Header ${sectionCount}" value="${header}">
-        </div>
-        <div class="card-body">
-            <textarea class="form-control" rows="3" placeholder="Section Content">${content}</textarea>
-            <button type="button" class="btn btn-danger mt-2" onclick="removeSection(this)">Remove Section</button>
-        </div>
-      `;
-
-      document.getElementById("sectionsContainer").appendChild(section);
-    }
-
-    // Function to remove sections
-    function removeSection(button) {
-      button.closest('.card').remove();
-    }
-
-
-
-
-    document.getElementById('logoutButton').addEventListener('click', function () {
-      // Remove JWT from localStorage (or cookies if you're using that)
-      localStorage.removeItem('token');  // or document.cookie = "token=; Max-Age=-99999999;"; for cookies
-
-      // Optionally redirect to login page after logout
-      window.location.href = '/login.html';
-    });
-
-    // Check if the user is logged in before accessing a page
-    const token = localStorage.getItem('token');
-    if (!token) {
-      window.location.href = '/login.html';
-    }
-
-
-    function loadJobs() {
+    function fetchJobCount() {
       fetch('https://rising-capital-backend.onrender.com/api/jobs')
         .then(response => response.json())
         .then(data => {
-          const jobList = document.getElementById('jobList');
-          jobList.innerHTML = ''; // Clear the job list
-
-          data.forEach(job => {
-            const jobItem = document.createElement('div');
-            jobItem.classList.add('list-group-item', 'job-item');
-            jobItem.innerHTML = `
-          <div class="d-flex justify-content-between align-items-center">
-            <div>
-              <h5>${job.title}</h5>
-              <p>${job.description}</p>
-              <p><strong>Company:</strong> ${job.companyName} | <strong>Location:</strong> ${job.location}</p>
-            </div>
-            <div>
-              <button class="btn btn-warning btn-sm" onclick="editJob('${job._id}')">Edit</button>
-              <button class="btn btn-danger btn-sm" onclick="deleteJob('${job._id}')">Delete</button>
-            </div>
-          </div>
-        `;
-            jobList.appendChild(jobItem);
-          });
+          const jobCount = data.length; // Get the number of jobs
+          document.getElementById('jobCount').textContent = jobCount;
         })
         .catch(error => {
-          console.error('Error fetching jobs:', error);
-          alert('Failed to load jobs.');
+          console.error('Error fetching job count:', error);
         });
     }
 
-
-    // Delete a job
-    function deleteJob(id) {
-      if (confirm('Are you sure you want to delete this job?')) {
-        fetch(`https://rising-capital-backend.onrender.com/api/jobs/${id}`, {
-          method: 'DELETE',
-        })
-          .then(response => response.json())
-          .then(data => {
-            alert(data.message);
-            loadJobs(); // Reload the jobs list
-          })
-          .catch(error => {
-            console.error('Error deleting job:', error);
-            alert('Failed to delete job.');
-          });
-      }
-    }
-
-    // Edit a job (prefill the form with job details)
-    function editJob(id) {
-      fetch(`https://rising-capital-backend.onrender.com/api/jobs/${id}`)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Job not found');
-          }
-          return response.json();
-        })
-        .then(job => {
-          // Prefill the form with job details
-          document.getElementById('jobTitle').value = job.title;
-          document.getElementById('jobDescription').value = job.description;
-          document.getElementById('companyName').value = job.companyName;
-          document.getElementById('jobLocation').value = job.location;
-          document.getElementById('jobType').value = job.jobType;
-
-          // Set form to editing mode by storing the job ID in the dataset
-          document.getElementById('jobForm').dataset.editingId = job._id;
-
-          // Clear any existing sections and add the ones from the job
-          document.getElementById('sectionsContainer').innerHTML = ''; // Clear sections
-          if (job.sections) {
-            job.sections.forEach(section => addSection(section.header, section.content));
-          }
-        })
-        .catch(error => {
-          console.error('Error fetching job details:', error);
-          alert('Failed to load job details.');
-        });
-    }
-
-
-    // Modify form submission to handle both creation and update
-    document.getElementById('jobForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const jobData = {
-        title: document.getElementById('jobTitle').value,
-        description: document.getElementById('jobDescription').value,
-        companyName: document.getElementById('companyName').value,
-        location: document.getElementById('jobLocation').value,
-        jobType: document.getElementById('jobType').value,
-        requirements: 'Requirements data', // You can modify this as needed
-        salary: 'Salary data', // Modify or collect from the form if needed
-        sections: [] // Collect sections from the form
-      };
-
-      // Collect dynamic sections from the form
-      document.querySelectorAll('#sectionsContainer .card').forEach(card => {
-        const header = card.querySelector('input[type="text"]').value;
-        const content = card.querySelector('textarea').value;
-        if (header && content) {
-          jobData.sections.push({ header, content });
-        }
-      });
-
-      // Check if we are in "edit" mode by checking if an ID exists in the dataset
-      const editingId = document.getElementById('jobForm').dataset.editingId;
-      const method = editingId ? 'PUT' : 'POST';
-      const url = editingId ? `https://rising-capital-backend.onrender.com/api/jobs/${editingId}` : 'https://rising-capital-backend.onrender.com/api/jobs';
-
-      fetch(url, {
-        method: method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(jobData),
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to save job');
-          }
-          return response.json();
-        })
-        .then(data => {
-          alert(editingId ? 'Job updated successfully!' : 'Job created successfully!');
-          document.getElementById('jobForm').reset(); // Clear the form after successful save
-          delete document.getElementById('jobForm').dataset.editingId; // Clear editing state
-          loadJobs(); // Reload the job list
-        })
-        .catch(error => {
-          console.error('Error saving job:', error);
-          alert('Failed to save job.');
-        });
-    });
-
-    // Load all jobs when the page loads
-    window.onload = loadJobs;
-
+    // Call fetchJobCount when the page loads
+    window.onload = fetchJobCount;
   </script>
 
 

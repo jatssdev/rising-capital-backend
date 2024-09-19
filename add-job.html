@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Star Admin2 </title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="./dist/assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="./dist/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./dist/assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="./dist/assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./dist/assets/vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="./dist/assets/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="./dist/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="./dist/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="./dist/assets/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="./dist/assets/images/favicon.png" />
+</head>
+
+<body class="with-welcome-text">
+    <div class="container-scroller">
+
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <div class="me-3">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button"
+                        data-bs-toggle="minimize">
+                        <span class="icon-menu"></span>
+                    </button>
+                </div>
+                <div>
+                    <a class="navbar-brand brand-logo" href="index.html">
+                        <img src="./dist/assets/images/logo.svg" alt="logo" />
+                    </a>
+                    <a class="navbar-brand brand-logo-mini" href="index.html">
+                        <img src="./dist/assets/images/logo-mini.svg" alt="logo" />
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-top">
+                <ul class="navbar-nav">
+                    <li class="nav-item fw-semibold d-none d-lg-block ms-0">
+                        <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">John Doe</span></h1>
+                        <h3 class="welcome-sub-text">Your performance summary this week </h3>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-bs-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="mdi mdi-grid-large menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./add-job.html">
+                            <i class="menu-icon mdi mdi-briefcase"></i>
+                            <span><button class="menu-title btn ">Add Job</button></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./jobs.html">
+                            <i class="menu-icon mdi mdi-briefcase"></i>
+                            <span><button class="menu-title btn ">Jobs</button></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <i class="menu-icon mdi mdi-logout"></i>
+                            <span><button class="menu-title btn " id="logoutButton">Logout</button></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="home-tab">
+                                <div class="tab-content tab-content-basic">
+                                    <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                        aria-labelledby="overview">
+                                        <div class="container my-5">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-8">
+                                                    <div class="card shadow-sm rounded">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title text-primary">Add a New Job</h4>
+                                                            <p class="card-description">Provide job details in the form
+                                                                below</p>
+                                                            <form id="jobForm">
+                                                                <!-- Job Title Field -->
+                                                                <div class="form-group mb-3">
+                                                                    <label for="jobTitle" class="form-label">Job
+                                                                        Title</label>
+                                                                    <div class="input-group">
+                                                                        <span
+                                                                            class="input-group-text bg-primary text-white"><i
+                                                                                class="mdi mdi-briefcase"></i></span>
+                                                                        <input type="text" class="form-control"
+                                                                            id="jobTitle" placeholder="Enter job title"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Job Description Field -->
+                                                                <div class="form-group mb-3">
+                                                                    <label for="jobDescription" class="form-label">Job
+                                                                        Description</label>
+                                                                    <div class="input-group">
+                                                                        <span
+                                                                            class="input-group-text bg-primary text-white"><i
+                                                                                class="mdi mdi-file-document"></i></span>
+                                                                        <textarea class="form-control"
+                                                                            id="jobDescription" rows="4"
+                                                                            placeholder="Enter job description"
+                                                                            required></textarea>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Experience Field -->
+                                                                <div class="form-group mb-3">
+                                                                    <label for="experience"
+                                                                        class="form-label">Experience</label>
+                                                                    <div class="input-group">
+                                                                        <span
+                                                                            class="input-group-text bg-primary text-white"><i
+                                                                                class="mdi mdi-history"></i></span>
+                                                                        <input type="text" class="form-control"
+                                                                            id="experience"
+                                                                            placeholder="Enter experience" required>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Education Field -->
+                                                                <div class="form-group mb-3">
+                                                                    <label for="education"
+                                                                        class="form-label">Education</label>
+                                                                    <div class="input-group">
+                                                                        <span
+                                                                            class="input-group-text bg-primary text-white"><i
+                                                                                class="mdi mdi-school"></i></span>
+                                                                        <input type="text" class="form-control"
+                                                                            id="education" placeholder="Enter education"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Job Location Field -->
+                                                                <div class="form-group mb-3">
+                                                                    <label for="jobLocation" class="form-label">Job
+                                                                        Location</label>
+                                                                    <div class="input-group">
+                                                                        <span
+                                                                            class="input-group-text bg-primary text-white"><i
+                                                                                class="mdi mdi-map-marker-circle"></i></span>
+                                                                        <input type="text" class="form-control"
+                                                                            id="jobLocation"
+                                                                            placeholder="Enter job location" required>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Job Skills Field -->
+                                                                <div class="form-group mb-3">
+                                                                    <label for="skills" class="form-label">Job
+                                                                        Skills</label>
+                                                                    <div class="input-group">
+                                                                        <span
+                                                                            class="input-group-text bg-primary text-white"><i
+                                                                                class="mdi mdi-code-tags"></i></span>
+                                                                        <input type="text" class="form-control"
+                                                                            id="skills"
+                                                                            placeholder="Enter job skills (comma-separated)"
+                                                                            required>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Form Buttons -->
+                                                                <div class="d-flex justify-content-between">
+                                                                    <button type="submit"
+                                                                        class="btn btn-success btn-icon-text">
+                                                                        <i class="mdi mdi-check btn-icon-prepend"></i>
+                                                                        Submit
+                                                                    </button>
+                                                                    <button type="reset"
+                                                                        class="btn btn-light btn-icon-text">
+                                                                        <i class="mdi mdi-close btn-icon-prepend"></i>
+                                                                        Cancel
+                                                                    </button>
+                                                                </div>
+
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="./dist/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="./dist/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="./dist/assets/vendors/chart.js/chart.umd.js"></script>
+    <script src="./dist/assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="./dist/assets/js/off-canvas.js"></script>
+    <script src="./dist/assets/js/template.js"></script>
+    <script src="./dist/assets/js/settings.js"></script>
+    <script src="./dist/assets/js/hoverable-collapse.js"></script>
+    <script src="./dist/assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="./dist/assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="./dist/assets/js/dashboard.js"></script>
+    <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
+    <!-- End custom js for this page-->
+
+    <script>
+
+        document.getElementById('logoutButton').addEventListener('click', function () {
+            // Remove JWT from localStorage (or cookies if you're using that)
+            localStorage.removeItem('token');  // or document.cookie = "token=; Max-Age=-99999999;"; for cookies
+
+            // Optionally redirect to login page after logout
+            window.location.href = '/login.html';
+        });
+
+        // Check if the user is logged in before accessing a page
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = '/login.html';
+        }
+
+
+        // Modify form submission to handle both creation and update
+        document.getElementById('jobForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const jobData = {
+                title: document.getElementById('jobTitle').value,
+                description: document.getElementById('jobDescription').value,
+                experience: document.getElementById('experience').value,
+                education: document.getElementById('education').value,
+                location: document.getElementById('jobLocation').value,
+                skills: document.getElementById('skills').value.split(',').map(skill => skill.trim()) // Handle comma-separated skills
+            };
+
+            // Check if we are in "edit" mode by checking if an ID exists in the dataset
+            const editingId = document.getElementById('jobForm').dataset.editingId;
+            const method = editingId ? 'PUT' : 'POST';
+            const url = editingId ? `https://rising-capital-backend.onrender.com/api/jobs/${editingId}` : 'https://rising-capital-backend.onrender.com/api/jobs';
+
+            fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jobData),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to save job');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert(editingId ? 'Job updated successfully!' : 'Job created successfully!');
+                    document.getElementById('jobForm').reset(); // Clear the form after successful save
+                    delete document.getElementById('jobForm').dataset.editingId; // Clear editing state
+                    loadJobs(); // Reload the job list
+                })
+                .catch(error => {
+                    console.error('Error saving job:', error);
+                    alert('Failed to save job.');
+                });
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>
