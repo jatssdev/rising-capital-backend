@@ -354,7 +354,7 @@
 
 
     function loadJobs() {
-      fetch('http://localhost:5000/api/jobs')
+      fetch('https://rising-capital-backend.onrender.com/api/jobs')
         .then(response => response.json())
         .then(data => {
           const jobList = document.getElementById('jobList');
@@ -389,7 +389,7 @@
     // Delete a job
     function deleteJob(id) {
       if (confirm('Are you sure you want to delete this job?')) {
-        fetch(`http://localhost:5000/api/jobs/${id}`, {
+        fetch(`https://rising-capital-backend.onrender.com/api/jobs/${id}`, {
           method: 'DELETE',
         })
           .then(response => response.json())
@@ -406,7 +406,7 @@
 
     // Edit a job (prefill the form with job details)
     function editJob(id) {
-      fetch(`http://localhost:5000/api/jobs/${id}`)
+      fetch(`https://rising-capital-backend.onrender.com/api/jobs/${id}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Job not found');
@@ -464,7 +464,7 @@
       // Check if we are in "edit" mode by checking if an ID exists in the dataset
       const editingId = document.getElementById('jobForm').dataset.editingId;
       const method = editingId ? 'PUT' : 'POST';
-      const url = editingId ? `http://localhost:5000/api/jobs/${editingId}` : 'http://localhost:5000/api/jobs';
+      const url = editingId ? `https://rising-capital-backend.onrender.com/api/jobs/${editingId}` : 'https://rising-capital-backend.onrender.com/api/jobs';
 
       fetch(url, {
         method: method,
