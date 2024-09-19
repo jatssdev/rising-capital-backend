@@ -96,7 +96,7 @@
         if (response.ok) {
           // Handle successful login (e.g., store JWT in localStorage)
           localStorage.setItem('token', data.token);
-          window.location.href = './dist/index.html'; // Redirect to dashboard or another page
+          window.location.href = '/'; // Redirect to dashboard or another page
         } else {
           // Handle login failure (e.g., show error message)
           alert(data.message);
