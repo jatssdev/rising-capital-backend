@@ -7,23 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Star Admin2 </title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="assets/vendors/feather/feather.css">
-  <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="assets/vendors/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="./dist/assets/vendors/feather/feather.css">
+  <link rel="stylesheet" href="./dist/assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="./dist/assets/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="./dist/assets/vendors/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./dist/assets/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="./dist/assets/vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="./dist/assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="./dist/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
   <link rel="stylesheet" type="text/css" href="assets/js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="./dist/assets/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="assets/images/favicon.png" />
+  <link rel="shortcut icon" href="./dist/assets/images/favicon.png" />
 </head>
 
 <body class="with-welcome-text">
@@ -39,10 +39,10 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="index.html">
-            <img src="assets/images/logo.svg" alt="logo" />
+            <img src="./dist/assets/images/logo.svg" alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="assets/images/logo-mini.svg" alt="logo" />
+            <img src="./dist/assets/images/logo-mini.svg" alt="logo" />
           </a>
         </div>
       </div>
@@ -80,9 +80,11 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="./dist/pages/ui-features/buttons.html">Buttons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="./dist/pages/ui-features/dropdowns.html">Dropdowns</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link" href="./dist/pages/ui-features/typography.html">Typography</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -288,23 +290,23 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="assets/vendors/js/vendor.bundle.base.js"></script>
-  <script src="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="./dist/assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="./dist/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="assets/vendors/chart.js/chart.umd.js"></script>
-  <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="./dist/assets/vendors/chart.js/chart.umd.js"></script>
+  <script src="./dist/assets/vendors/progressbar.js/progressbar.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="assets/js/off-canvas.js"></script>
-  <script src="assets/js/template.js"></script>
-  <script src="assets/js/settings.js"></script>
-  <script src="assets/js/hoverable-collapse.js"></script>
-  <script src="assets/js/todolist.js"></script>
+  <script src="./dist/assets/js/off-canvas.js"></script>
+  <script src="./dist/assets/js/template.js"></script>
+  <script src="./dist/assets/js/settings.js"></script>
+  <script src="./dist/assets/js/hoverable-collapse.js"></script>
+  <script src="./dist/assets/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="assets/js/jquery.cookie.js" type="text/javascript"></script>
-  <script src="assets/js/dashboard.js"></script>
+  <script src="./dist/assets/js/jquery.cookie.js" type="text/javascript"></script>
+  <script src="./dist/assets/js/dashboard.js"></script>
   <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
   <!-- End custom js for this page-->
 
@@ -347,21 +349,21 @@
     // Check if the user is logged in before accessing a page
     const token = localStorage.getItem('token');
     if (!token) {
-      window.location.href = '/adminDashboard/dist/pages/samples/login.html';
+      window.location.href = '/login.html';
     }
 
 
     function loadJobs() {
-  fetch('http://localhost:5000/api/jobs')
-    .then(response => response.json())
-    .then(data => {
-      const jobList = document.getElementById('jobList');
-      jobList.innerHTML = ''; // Clear the job list
+      fetch('http://localhost:5000/api/jobs')
+        .then(response => response.json())
+        .then(data => {
+          const jobList = document.getElementById('jobList');
+          jobList.innerHTML = ''; // Clear the job list
 
-      data.forEach(job => {
-        const jobItem = document.createElement('div');
-        jobItem.classList.add('list-group-item', 'job-item');
-        jobItem.innerHTML = `
+          data.forEach(job => {
+            const jobItem = document.createElement('div');
+            jobItem.classList.add('list-group-item', 'job-item');
+            jobItem.innerHTML = `
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <h5>${job.title}</h5>
@@ -374,14 +376,14 @@
             </div>
           </div>
         `;
-        jobList.appendChild(jobItem);
-      });
-    })
-    .catch(error => {
-      console.error('Error fetching jobs:', error);
-      alert('Failed to load jobs.');
-    });
-}
+            jobList.appendChild(jobItem);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching jobs:', error);
+          alert('Failed to load jobs.');
+        });
+    }
 
 
     // Delete a job
@@ -404,35 +406,35 @@
 
     // Edit a job (prefill the form with job details)
     function editJob(id) {
-  fetch(`http://localhost:5000/api/jobs/${id}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Job not found');
-      }
-      return response.json();
-    })
-    .then(job => {
-      // Prefill the form with job details
-      document.getElementById('jobTitle').value = job.title;
-      document.getElementById('jobDescription').value = job.description;
-      document.getElementById('companyName').value = job.companyName;
-      document.getElementById('jobLocation').value = job.location;
-      document.getElementById('jobType').value = job.jobType;
+      fetch(`http://localhost:5000/api/jobs/${id}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Job not found');
+          }
+          return response.json();
+        })
+        .then(job => {
+          // Prefill the form with job details
+          document.getElementById('jobTitle').value = job.title;
+          document.getElementById('jobDescription').value = job.description;
+          document.getElementById('companyName').value = job.companyName;
+          document.getElementById('jobLocation').value = job.location;
+          document.getElementById('jobType').value = job.jobType;
 
-      // Set form to editing mode by storing the job ID in the dataset
-      document.getElementById('jobForm').dataset.editingId = job._id;
+          // Set form to editing mode by storing the job ID in the dataset
+          document.getElementById('jobForm').dataset.editingId = job._id;
 
-      // Clear any existing sections and add the ones from the job
-      document.getElementById('sectionsContainer').innerHTML = ''; // Clear sections
-      if (job.sections) {
-        job.sections.forEach(section => addSection(section.header, section.content));
-      }
-    })
-    .catch(error => {
-      console.error('Error fetching job details:', error);
-      alert('Failed to load job details.');
-    });
-}
+          // Clear any existing sections and add the ones from the job
+          document.getElementById('sectionsContainer').innerHTML = ''; // Clear sections
+          if (job.sections) {
+            job.sections.forEach(section => addSection(section.header, section.content));
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching job details:', error);
+          alert('Failed to load job details.');
+        });
+    }
 
 
     // Modify form submission to handle both creation and update
