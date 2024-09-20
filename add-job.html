@@ -181,7 +181,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <!-- Job Location Field -->
+                                                                <!-- Job Location Field (Multiselect Dropdown) -->
                                                                 <div class="form-group mb-3">
                                                                     <label for="jobLocation" class="form-label">Job
                                                                         Location</label>
@@ -189,9 +189,15 @@
                                                                         <span
                                                                             class="input-group-text bg-primary text-white"><i
                                                                                 class="mdi mdi-map-marker-circle"></i></span>
-                                                                        <input type="text" class="form-control"
-                                                                            id="jobLocation"
-                                                                            placeholder="Enter job location" required>
+                                                                        <select id="jobLocation" multiple
+                                                                            placeholder="Choose locations"
+                                                                            data-allow-clear="1">
+                                                                            <option>New York</option>
+                                                                            <option>San Francisco</option>
+                                                                            <option>Los Angeles</option>
+                                                                            <option>Chicago</option>
+                                                                            <option>Boston</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
 
@@ -344,7 +350,7 @@
                 const jobDescription = $.trim($('#jobDescription').val());
                 const experience = $.trim($('#experience').val());
                 const education = $.trim($('#education').val());
-                const jobLocation = $.trim($('#jobLocation').val());
+
 
                 // Ensure no empty fields
                 if (!jobTitle || !jobDescription || !experience || !education || !jobLocation) {
@@ -355,13 +361,15 @@
                 // Get selected skills as an array
                 const selectedSkills = $('#skills').val();
                 const skillsString = selectedSkills ? selectedSkills : [];
+                const selectedLocations = $('#jobLocation').val();
+                const LocationsString = selectedLocations ? selectedLocations : [];
 
                 const jobData = {
                     title: jobTitle,
                     description: jobDescription,
                     experience: experience,
                     education: education,
-                    location: jobLocation,
+                    location: LocationsString,
                     skills: skillsString
                 };
 
