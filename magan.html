@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Star Admin2 </title>
+    
+    <!-- Include Bootstrap and jQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap Multiselect CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h4 class="card-title text-primary">Add a New Job</h4>
+        <p class="card-description">Provide job details in the form below</p>
+        <form id="jobForm">
+
+            <!-- Job Skills Field (Bootstrap Multiselect Dropdown) -->
+            <div class="form-group mb-3">
+                <label for="multiple-checkboxes" class="form-label">Job Skills</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-primary text-white">
+                        <i class="mdi mdi-code-tags"></i>
+                    </span>
+                    <select id="multiple-checkboxes" multiple="multiple">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="React">React</option>
+                        <option value="Node.js">Node.js</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="SQL">SQL</option>
+                        <option value="C++">C++</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="hidden" id="skills" name="skills">
+
+            <!-- Form Buttons -->
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success btn-icon-text">
+                    <i class="mdi mdi-check btn-icon-prepend"></i> Submit
+                </button>
+                <button type="reset" class="btn btn-light btn-icon-text">
+                    <i class="mdi mdi-close btn-icon-prepend"></i> Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Initialize Bootstrap Multiselect with Checkboxes
+        $(document).ready(function() {
+            $('#multiple-checkboxes').multiselect({
+                includeSelectAllOption: true,
+                onChange: function(option, checked, select) {
+                    updateSkillsInput();
+                },
+                onSelectAll: function() {
+                    updateSkillsInput();
+                },
+                onDeselectAll: function() {
+                    updateSkillsInput();
+                }
+            });
+
+            function updateSkillsInput() {
+                // Get selected options
+                var selectedOptions = $('#multiple-checkboxes option:selected').map(function() {
+                    return $(this).val();
+                }).get();
+
+                // Update hidden input field with comma-separated values
+                $('#skills').val(selectedOptions.join(', '));
+                console.log("Skills selected: " + $('#skills').val());
+            }
+        });
+
+        // Handle form submission
+        $('#jobForm').on('submit', function(event) {
+            event.preventDefault();
+
+            const jobData = {
+                skills: $('#skills').val() // This is your comma-separated list of skills
+            };
+
+            console.log('Form submitted with job data:', jobData);
+            // Here, you can handle the AJAX form submission to your backend
+        });
+    </script>
+
+</body>
+
+</html>
